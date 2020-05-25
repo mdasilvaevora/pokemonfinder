@@ -1,6 +1,12 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
+import PropTypes from 'prop-types';
+import { connect } from "react-redux";
+import { fetchPokemons } from "../../actions/pokemonActions";
 
-export default class SearchBar extends Component {
+
+class SearchBar extends Component {
     render(){
         return (
             <div className="search-bar-container">
@@ -20,3 +26,17 @@ export default class SearchBar extends Component {
         )
     }
 }
+
+SearchBar.PropTypes = {
+    fetchPokemons: PropTypes.func.isRequired,
+    errors: PropTypes.object.isRequired
+}
+
+const mapStateToProps = state => ({
+    errors: state.errors
+})
+
+export default connect(
+    mapStateToProps,
+    { fetchPokemons }
+)(withRouter(SearchBar));
