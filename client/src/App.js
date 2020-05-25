@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <h1>Hello</h1>
-    </div>
-  );
+import Layout from "./components/layout/Layout";
+
+class App extends Component {
+  render() {
+    return (
+      <Router>
+        <div className="App">
+          <Route exact path="/" component={Layout}/>
+        </div>
+      </Router>
+    );
+  }
 }
 
 export default App;
