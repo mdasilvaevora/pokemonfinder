@@ -4,6 +4,7 @@ import {
 } from '../actions/types';
 
 const initialState = {
+    fetchCount: 0,
     loading: false,
     pokemons: []
 }
@@ -12,7 +13,8 @@ export default function(state = initialState, action) {
         case FETCH_LOADING:
             return{
                 ...state,
-                loading:true
+                loading:true,
+                fetchCount:state.fetchCount+1
             };
         case SET_POKEMONS:
             return{

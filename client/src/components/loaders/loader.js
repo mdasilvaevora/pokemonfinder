@@ -2,6 +2,7 @@ import React from 'react'
 
 export default function Loader() {
     return (
+        <div className="container">
         <div class="preloader-wrapper big active">
             <div class="spinner-layer spinner-red-only ">
                 <div class="circle-clipper left">
@@ -12,6 +13,7 @@ export default function Loader() {
                 <div class="circle"></div>
                 </div>
             </div>
+        </div>
         </div>
     )
 }

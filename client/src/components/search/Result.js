@@ -5,18 +5,27 @@ import { withRouter } from "react-router-dom";
 
 import Loader from '../loaders/loader';
 import EmptyResults from '../messages/EmptyResults';
+import SearchInfo from '../messages/SearchInfo';
 
 class Result extends Component {
+
     render() {
-        const { pokemons, loading } = this.props;
+        const { pokemons, loading, fetchCount } = this.props;
         const result = pokemons.length != 0;
+        const firstRender = fetchCount == 0;
+
         return (
             <div className="search-result-container container">
                 {!loading? 
                     !result?
-                        <div className="row center">
-                            <EmptyResults/>
-                        </div>
+                        firstRender?
+                            <div className="row center">
+                                <SearchInfo/>
+                            </div>
+                            :
+                            <div className="row center">
+                                <EmptyResults/>
+                            </div>
                     :
                         pokemons.map(pokemon => {
                             return (
@@ -29,7 +38,6 @@ class Result extends Component {
                                 </div>
                             )
                         })
-
                 :
                 <div className="row center">
                     <Loader/>
@@ -42,12 +50,15 @@ class Result extends Component {
 
 Result.propTypes = {
     fetchPokemons: PropTypes.func.isRequired,
-    pokemons: PropTypes.array.isRequired
+    pokemons: PropTypes.array.isRequired,
+    loading: PropTypes.bool.isRequired,
+    fetchCount: PropTypes.number.isRequired
 }
 
 const mapStateToProps = state => ({
     pokemons: state.pokemons.pokemons,
-    loading: state.pokemons.loading
+    loading: state.pokemons.loading,
+    fetchCount: state.pokemons.fetchCount
 })
 
 export default connect(

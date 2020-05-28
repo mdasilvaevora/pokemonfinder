@@ -23,6 +23,6 @@ export const fetchPokemons = name => dispatch => {
             setPokemons(dispatch,data.pokemons)
         })
         .catch(err => {
-            console.log(err)
+            dispatch({ type: GET_ERRORS, payload: err})
         })
 };
