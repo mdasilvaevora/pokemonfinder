@@ -6,6 +6,7 @@ import { withRouter } from "react-router-dom";
 import Loader from '../loaders/loader';
 import EmptyResults from '../messages/EmptyResults';
 import SearchInfo from '../messages/SearchInfo';
+import PokemonResult from './PokemonResult';
 
 class Result extends Component {
 
@@ -29,13 +30,7 @@ class Result extends Component {
                     :
                         pokemons.map(pokemon => {
                             return (
-                                <div className="row">
-                                    <div className="col s12 m5">
-                                        <div className="card-panel">
-                                            {pokemon.name}
-                                        </div>
-                                    </div>
-                                </div>
+                                <PokemonResult pokemon={pokemon}/>
                             )
                         })
                 :
