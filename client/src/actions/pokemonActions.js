@@ -21,7 +21,7 @@ export const fetchPokemons = name => dispatch => {
             return res.json()
         })
         .then(data => {
-            setPokemons(dispatch,data)
+            setPokemons(dispatch,data.pokemons)
         })
         .catch(err => {
             console.log(err)

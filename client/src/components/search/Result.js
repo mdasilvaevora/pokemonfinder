@@ -1,4 +1,7 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 
 const data = [
     {
@@ -12,11 +15,13 @@ const data = [
     }
 ]
 
-export default class Result extends Component {
+class Result extends Component {
     render() {
+        console.log(this.props.pokemons)
+        let pokemons = this.props.pokemons
         return (
             <div className="search-result-container">
-                {data.map(pokemon => {
+                {pokemons.map(pokemon => {
                     return (
                         <div className="row">
                             <div className="col s12 m5">
@@ -31,3 +36,16 @@ export default class Result extends Component {
         )
     }
 }
+
+Result.propTypes = {
+    fetchPokemons: PropTypes.func.isRequired,
+    pokemons: PropTypes.array.isRequired
+}
+
+const mapStateToProps = state => ({
+    pokemons: state.pokemons.pokemons
+})
+
+export default connect(
+    mapStateToProps
+)(withRouter(Result));
