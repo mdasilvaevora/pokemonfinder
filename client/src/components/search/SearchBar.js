@@ -39,7 +39,7 @@ class SearchBar extends Component {
                                         placeholder="Ingrese el nombre del pokemon a buscar" />
                             </div>
                             <div className="col s2 right-align">
-                                <a className="waves-effect waves-light btn"
+                                <a className="waves-effect waves-light btn red lighten-2 "
                                     onClick={this.handleSubmit}>
                                         Buscar
                                 </a>

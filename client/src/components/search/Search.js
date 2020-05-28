@@ -1,16 +1,20 @@
 import React, { Component } from "react";
 
+import Layout from '../layout/Layout';
 import SearchBar from './SearchBar';
 import Result from "./Result";
+
 class Search extends Component {
     render(){
         return (
-            <div className="search-container">
-                <h1>Pokemon finder</h1>
-                <p>El que quiere Pokemons, que los busque.</p>
-                <SearchBar/>
-                <Result/>
-            </div>
+            <Layout>
+                <div className="search-container container">
+                    <h1>Pokemon finder</h1>
+                    <blockquote>El que quiere Pokemons, que los busque.</blockquote>
+                    <SearchBar/>
+                    <Result/>
+                </div>
+            </Layout>
         )
     }
 }

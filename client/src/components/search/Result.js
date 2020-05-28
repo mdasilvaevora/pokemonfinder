@@ -3,35 +3,38 @@ import PropTypes from 'prop-types';
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 
-const data = [
-    {
-        name: "Pikachu"
-    },
-    {
-        name: "Otro Pokemon"
-    },
-    {
-        name: "Otro Pokemons más"
-    }
-]
+import Loader from '../loaders/loader';
+import EmptyResults from '../messages/EmptyResults';
 
 class Result extends Component {
     render() {
-        console.log(this.props.pokemons)
-        let pokemons = this.props.pokemons
+        const { pokemons, loading } = this.props;
+        const result = pokemons.length != 0;
         return (
-            <div className="search-result-container">
-                {pokemons.map(pokemon => {
-                    return (
-                        <div className="row">
-                            <div className="col s12 m5">
-                                    <div className="card-panel">
-                                        {pokemon.name}
-                                    </div>
-                            </div>
+            <div className="search-result-container container">
+                {!loading? 
+                    !result?
+                        <div className="row center">
+                            <EmptyResults/>
                         </div>
-                    )
-                })}
+                    :
+                        pokemons.map(pokemon => {
+                            return (
+                                <div className="row">
+                                    <div className="col s12 m5">
+                                        <div className="card-panel">
+                                            {pokemon.name}
+                                        </div>
+                                    </div>
+                                </div>
+                            )
+                        })
+
+                :
+                <div className="row center">
+                    <Loader/>
+                </div>
+                }
             </div>
         )
     }
@@ -43,7 +46,8 @@ Result.propTypes = {
 }
 
 const mapStateToProps = state => ({
-    pokemons: state.pokemons.pokemons
+    pokemons: state.pokemons.pokemons,
+    loading: state.pokemons.loading
 })
 
 export default connect(

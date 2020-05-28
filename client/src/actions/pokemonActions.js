@@ -14,7 +14,6 @@ function setPokemons (dispatch,data) {
 
 //Fetch pokemons
 export const fetchPokemons = name => dispatch => {
-    console.log("Fetching...")
     dispatch({type:FETCH_LOADING});
     fetch(`http://localhost:5000/api/pokemon/?name=${name}`)
         .then(res => {
