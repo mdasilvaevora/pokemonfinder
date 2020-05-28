@@ -1,18 +1,20 @@
 import React, { Component } from 'react'
+import "./footer.css";
 
 export default class Footer extends Component {
     render() {
         return (
-            <div className="footer-container">
-                <div className="row">
-                    <div className="col s6">
-                        <span>Hecho por Manu</span>
-                    </div>
-                    <div className="col s6 right-align">
-                        <a className="waves-effect waves-light btn">Link a mi repo</a>
-                    </div>
+            <footer class="footer-container page-footer">
+                <div className="footer-copyright">
+                    <div className="container">
+                        @2020 Manuel da Silva Evora
+                        <a class="grey-text text-lighten-4 right"
+                            href="https://github.com/mdasilvaevora/pokemonfinder">
+                            Link a mi repo
+                        </a>
+                    </div> 
                 </div>
-            </div>
+            </footer>
         )
     }
 }
