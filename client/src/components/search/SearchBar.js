@@ -4,6 +4,7 @@ import { withRouter } from "react-router-dom";
 import PropTypes from 'prop-types';
 import { fetchPokemons } from "../../actions/pokemonActions";
 
+import './Search.css';
 
 class SearchBar extends Component {
     constructor(props){
@@ -27,10 +28,9 @@ class SearchBar extends Component {
 
     render(){
         return (
-            <div className="search-bar-container">
                 <div className="row">
                     <form className="col s12">
-                        <div className="row">
+                        <div className="search-bar-container">
                             <div className="input-field col s10">
                                 <input id="search" 
                                         type="search" 
@@ -47,7 +47,6 @@ class SearchBar extends Component {
                         </div>
                     </form>
                 </div>
-            </div>
         )
     }
 }

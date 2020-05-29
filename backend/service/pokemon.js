@@ -14,10 +14,9 @@ async function adaptPokemons (pokemons) {
         return {
             id: pokemonFetch.id,
             name: pokemonFetch.name,
-            base_experience: pokemonFetch.experience,
+            baseExperience: pokemonFetch.base_experience,
             height: pokemonFetch.height,
-            weight: pokemonFetch.weight,
-            order: pokemonFetch.order
+            weight: pokemonFetch.weight
         }
     }))
 }
