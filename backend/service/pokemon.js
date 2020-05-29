@@ -35,6 +35,9 @@ function filterPokemons(pokemons, query) {
 
 module.exports = {
     getPokemons: async function(query){
+        var emptyQuery = Object.keys(query).length === 0;
+        var emptyPokemons = [];
+        if(emptyQuery) return emptyPokemons;
         var pokemonsFetch = await P.getPokemonsList()
         var pokemons = pokemonsFetch.results;
         var filteredPokemons = filterPokemons(pokemons,query)
