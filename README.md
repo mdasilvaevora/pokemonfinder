@@ -1,4 +1,4 @@
-# pokemonfinder
+# Pokemonfinder
 
 ## Stack
 Las tecnologías utilizadas para desarrollar el **pokemonfinder** son:
