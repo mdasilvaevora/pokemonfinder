@@ -1,3 +1,5 @@
+const Pokemon = require('../models/pokemon');
+
 var Pokedex = require('pokedex-promise-v2');
 var options = {
     protocol: 'https',
@@ -11,13 +13,7 @@ async function adaptPokemons (pokemons) {
     var pokemonFetch;
     return await Promise.all(pokemons.map(async pokemon => {
         pokemonFetch = await P.resource(pokemon.url)
-        return {
-            id: pokemonFetch.id,
-            name: pokemonFetch.name,
-            baseExperience: pokemonFetch.base_experience,
-            height: pokemonFetch.height,
-            weight: pokemonFetch.weight
-        }
+        return new Pokemon(pokemonFetch)
     }))
 }
 
@@ -39,10 +35,10 @@ module.exports = {
         var emptyPokemons = [];
         if(emptyQuery) return emptyPokemons;
 
-        var pokemonsFetch = await P.getPokemonsList()
-        var pokemons = pokemonsFetch.results;
-        var filteredPokemons = filterPokemons(pokemons,query)
+        var pokemonsFetch = await P.getPokemonsList();
+        var filteredPokemons = filterPokemons(pokemonsFetch.results,query)
         var adaptedPokemons = await adaptPokemons(filteredPokemons);
+        
         return adaptedPokemons;
         }
 }

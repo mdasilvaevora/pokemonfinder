@@ -7,7 +7,7 @@ module.exports = {
                            res.send({ pokemons: pokemons })
                         })
                         .catch(err => {
-                            res.status(500).json({errors: err});
+                            res.status(500).json({errors: err.message});
                         })    
     }
 }
