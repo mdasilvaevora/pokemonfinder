@@ -1,9 +1,7 @@
 # pokemonfinder
 
 ## Stack
-
-El desarrollo de este buscador de pokemones se encuentra realizado
-en las siguientes tecnologías:
+Las tecnologías utilizadas para desarrollar el **pokemonfinder** son:
 
 - Node JS
 - Express JS
@@ -14,9 +12,9 @@ en las siguientes tecnologías:
 
 Clonar el repositorio en un workspace local.
 Ingresar a la carpeta donde fue clonado el repositorio y correr los siguiente comandos:
--npm install
--npm run dev-install
--npm run dev-start
+- npm install
+- npm run dev-install
+- npm run dev-start
 
-El server correra en (http://localhost:5000)
+El servidor correra en (http://localhost:5000)
 El cliente correra en (http://localhost:3000)
