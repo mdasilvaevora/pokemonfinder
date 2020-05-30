@@ -12,7 +12,7 @@ Las tecnologías utilizadas para desarrollar el **pokemonfinder** son:
 > Antes, asegurarse de tener instalado npm (https://www.npmjs.com/get-npm)
 
 Clonar el repositorio en un workspace local.
-Ingresar a la carpeta donde fue clonado el repositorio y correr los siguiente comandos:
+Ingresar a la carpeta donde fue clonado el repositorio y correr los siguientes comandos:
 - npm install
 - npm run dev-install
 - npm run dev-start
