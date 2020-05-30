@@ -34,7 +34,7 @@ class SearchBar extends Component {
                         <div className="search-bar-container">
                             <div className="input-field col s10">
                                 <input id="search" 
-                                        type="search" 
+                                        type="text" 
                                         value={this.state.name}
                                         onChange={this.handleChange}
                                         placeholder="Ingrese el nombre del pokemon a buscar" />
