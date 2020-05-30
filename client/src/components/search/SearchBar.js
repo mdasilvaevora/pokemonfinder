@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import PropTypes from 'prop-types';
 import { fetchPokemons } from "../../actions/pokemonActions";
-
+import * as M from 'materialize-css/dist/js/materialize'
 import './Search.css';
 
 class SearchBar extends Component {
@@ -23,7 +23,8 @@ class SearchBar extends Component {
     }
 
     handleSubmit(event){
-        this.props.fetchPokemons(this.state.name);
+        if(this.state.name.length == 0) M.toast({html: 'Debes ingresar el nombre del pokemon a buscar.'})
+        else this.props.fetchPokemons(this.state.name);
     }
 
     render(){
@@ -39,7 +40,7 @@ class SearchBar extends Component {
                                         placeholder="Ingrese el nombre del pokemon a buscar" />
                             </div>
                             <div className="col s2 right-align">
-                                <a className="waves-effect waves-light btn red lighten-2 "
+                                <a className="waves-effect waves-light btn red lighten-2"
                                     onClick={this.handleSubmit}>
                                         Buscar
                                 </a>

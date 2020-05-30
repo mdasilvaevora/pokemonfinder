@@ -2,7 +2,12 @@ const PokemonService = require('../service/pokemon');
 
 module.exports = {
     find: async function(req,res) {
-        const pokemons = await PokemonService.getPokemons(req.query)
-        res.send({ pokemons: pokemons })     
+        PokemonService.getPokemons(req.query)
+                        .then(pokemons => {
+                           res.send({ pokemons: pokemons })
+                        })
+                        .catch(err => {
+                            res.status(500).json({errors: err});
+                        })    
     }
 }
