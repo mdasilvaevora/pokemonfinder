@@ -1,0 +1,11 @@
+.search-result-container{
+    margin: 0px;
+};
+
+.search-bar-container{
+    margin: 0;
+}
+
+.loader-container{
+    flex: 1 0 auto;
+}

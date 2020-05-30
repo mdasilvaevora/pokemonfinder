@@ -1,0 +1,3 @@
+export const GET_ERRORS = "GET_ERRORS"
+export const FETCH_LOADING = "FETCH_LOADING"
+export const SET_POKEMONS = "SET_POKEMONS"

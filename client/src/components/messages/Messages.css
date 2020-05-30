@@ -1,0 +1,11 @@
+.message{
+    height: 400px;
+    width: 400px;
+    opacity: 0.1;
+
+}
+
+.message-text{
+    color:grey;
+    opacity: 0.8;
+}
