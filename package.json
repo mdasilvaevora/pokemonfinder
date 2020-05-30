@@ -14,13 +14,14 @@
     "nodemon": "^2.0.4"
   },
   "scripts": {
+    "dev-install": "concurrently \"cd backend && npm install\" \"cd client && npm install\"",
     "client-install": "cd client && npm install",
     "server-install": "cd backend && npm install",
     "start": "cd backend && npm install && node server.js",
     "server": "cd backend && nodemon server.js",
     "client": "cd client && npm start",
     "test": "cd backend && mocha --timeout 10000",
-    "dev": "concurrently \"cd backend && npm start\" \"cd client && npm start\""
+    "dev-start": "concurrently \"cd backend && npm start\" \"cd client && npm start\""
   },
   "repository": {
     "type": "git",
