@@ -20,3 +20,7 @@ Ingresar a la carpeta donde fue clonado el repositorio y correr los siguientes c
 El servidor correra en (http://localhost:5000)
 
 El cliente correra en (http://localhost:3000)
+
+## Demo
+
+<div style="width:360px;max-width:100%;"><div style="height:0;padding-bottom:50.83%;position:relative;"><iframe width="360" height="183" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameBorder="0" src="https://imgflip.com/embed/446bp3"></iframe></div><p><a href="https://imgflip.com/gif/446bp3">via Imgflip</a></p></div>
