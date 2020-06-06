@@ -22,4 +22,4 @@ El servidor correra en (http://localhost:5000)
 El cliente correra en (http://localhost:3000)
 
 ## Demo
-![](https://i.ibb.co/VWytvwy/446bp3.gif)
+<img src="https://i.ibb.co/VWytvwy/446bp3.gif" width=100 />
