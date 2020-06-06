@@ -1,5 +1,8 @@
 # Pokemonfinder
 
+## Demo
+![](pokemonfinderdemo.gif)
+
 ## Stack
 Las tecnologías utilizadas para desarrollar el **pokemonfinder** son:
 
@@ -21,5 +24,4 @@ El servidor correra en (http://localhost:5000)
 
 El cliente correra en (http://localhost:3000)
 
-## Demo
-![](pokemonfinderdemo.gif)
+
