@@ -1,4 +1,5 @@
 import fetchUrl from '../configuration/configuration';
+import axios from "axios";
 
 import {
     GET_ERRORS,
@@ -18,13 +19,10 @@ export const fetchPokemons = name => dispatch => {
     dispatch({type:FETCH_LOADING});
     var url = fetchUrl;
     if(name.length != 0 ) url = url + `/?name=${name}`;
-    fetch(url)
+    axios
+        .get(url)
         .then(res => {
-            if(res.ok){
-                return res.json()
-            } else {
-                throw new Error('Error del servidor, vuelva a intentar.')
-            }
+           return res.data;
         })
         .then(data => {
             setPokemons(dispatch,data.pokemons)
