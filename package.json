@@ -17,7 +17,7 @@
     "dev-install": "concurrently \"cd backend && npm install\" \"cd client && npm install\"",
     "client-install": "cd client && npm install",
     "server-install": "cd backend && npm install",
-    "start": "cd backend && npm install && npm start",
+    "start": "npm install && cd backend && npm install && npm start",
     "server": "cd backend && nodemon server.js",
     "client": "cd client && npm start",
     "test": "cd backend && mocha --timeout 10000",
