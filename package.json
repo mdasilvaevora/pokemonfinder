@@ -21,6 +21,7 @@
     "server": "cd backend && nodemon server.js",
     "client": "cd client && npm start",
     "test": "cd backend && mocha --timeout 10000",
+    "heroku-postbuild": "cd client && npm install && npm run build",
     "dev-start": "concurrently \"cd backend && npm start\" \"cd client && npm start\""
   },
   "repository": {
